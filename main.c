@@ -5,8 +5,29 @@
 
 #define HEAP_SIZE 100
 
+int hashing_function(void* e) {
+    return 1;
+}
+
 int main() {
     HashTable ht;
-    init_hash_table(&ht, HEAP_SIZE, sizeof(HashElement), NULL);
+    init_hash_table(&ht, HEAP_SIZE, sizeof(HashElement), NULL, hashing_function);
+
+    HashElement he;
+    init_hash_element(&he, "ABC");
+    he.heapIndex = 1;
+    
+    insert_into_hash_table(&ht, &he);
+
+    HashElement he1;
+    printf("%u\n", he1);
+    // printf("%s\n", he1.airport);
+    // printf("%d\n", he1.heapIndex);
+    peek_at_element(&ht, &he1);
+
+    printf("%u\n", he1);
+    printf("%s\n", he1.airport);
+    printf("%d\n", he1.heapIndex);
+
     destroy_hash_table(&ht);
 }

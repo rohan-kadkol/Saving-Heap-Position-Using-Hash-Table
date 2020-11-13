@@ -5,4 +5,4 @@ typedef struct _HashElement {
     int heapIndex;
 } HashElement;
 
-void init_hash_element(HashElement *he, char airport[4], int heapIndex);
+void init_hash_element(HashElement *he, char airport[4]);
