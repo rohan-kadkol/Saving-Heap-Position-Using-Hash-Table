@@ -1,0 +1,1 @@
+gcc -o main main.c hash_table.c hash_element.c
