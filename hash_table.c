@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "hash_element.h"
+// #include "hash_element.h"
 
 void init_hash_table(HashTable* ht, int tableSize, int elementSize,
                      int (*compare_elements)(void* e1, void* e2),
@@ -14,7 +14,11 @@ void init_hash_table(HashTable* ht, int tableSize, int elementSize,
     ht->elementSize = elementSize;
     ht->compare_elements = compare_elements;
     ht->hashing_function = hashing_function;
+    ht->print_element = print_element;
     ht->hashTable = malloc(tableSize * elementSize);
+
+    printf("print=%u\n", print_element);
+    printf("&print=%u\n", &print_element);
 }
 
 void destroy_hash_table(HashTable* ht) {
@@ -39,11 +43,13 @@ void peek_at_element(HashTable* ht, void* element) {
 }
 
 void print_elements(HashTable* ht) {
+    printf("<-----START----->\n");
     for (int i = 0; i < ht->tableSize; i++) {
         void* element = ht->hashTable[i];
         if (element) {
             printf("Index %d\n", i);
-            ht->print_element(ht->hashTable[i]);
+            ht->print_element(element);
         }
     }
+    printf("<-----END------->\n");
 }

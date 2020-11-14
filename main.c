@@ -18,22 +18,24 @@ int main() {
     
     insert_into_hash_table(&ht, &he);
 
-    // HashElement he1;
-    peek_at_element(&ht, &he);
+    // // HashElement he1;
+    // peek_at_element(&ht, &he);
 
-    // printf("%u\n", ht);
-    // printf("%d\n", ht.size);
-    // print_elements(&ht);
+    // // printf("%u\n", ht);
+    // // printf("%d\n", ht.size);
+    // // print_elements(&ht);
 
-    printf("%s\n", he.airport);
-    printf("%d\n", he.heapIndex);
+    // // printf("%s\n", he.airport);
+    // // printf("%d\n", he.heapIndex);
 
-    init_hash_element(&he, "DEF");
-    insert_into_hash_table(&ht, &he);
-    peek_at_element(&ht, &he);
+    // init_hash_element(&he, "DEF");
+    // insert_into_hash_table(&ht, &he);
+    // peek_at_element(&ht, &he);
 
-    printf("%s\n", he.airport);
-    printf("%d\n", he.heapIndex);
+    // printf("%s\n", he.airport);
+    // printf("%d\n", he.heapIndex);
+
+    print_elements(&ht);
 
     destroy_hash_table(&ht);
 }
