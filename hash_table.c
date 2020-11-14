@@ -16,9 +16,6 @@ void init_hash_table(HashTable* ht, int tableSize, int elementSize,
     ht->hashing_function = hashing_function;
     ht->print_element = print_element;
     ht->hashTable = malloc(tableSize * elementSize);
-
-    printf("print=%u\n", print_element);
-    printf("&print=%u\n", &print_element);
 }
 
 void destroy_hash_table(HashTable* ht) {
