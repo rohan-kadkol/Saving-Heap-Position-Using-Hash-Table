@@ -1,5 +1,5 @@
 typedef struct _HashTable {
-    int size;
+    int tableSize;
     int elementSize;
     int (*compare_elements)(void* e1, void* e2);
     int (*hashing_function)(void* e);
@@ -7,7 +7,7 @@ typedef struct _HashTable {
     void **hashTable;
 } HashTable;
 
-void init_hash_table(HashTable* ht, int size, int elementSize,
+void init_hash_table(HashTable* ht, int tableSize, int elementSize,
                      int (*compare_elements)(void* e1, void* e2),
                      int (*hashing_function)(void *e),
                      void (*print_element)(void* e));

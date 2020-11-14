@@ -6,19 +6,19 @@
 
 #include "hash_element.h"
 
-void init_hash_table(HashTable* ht, int size, int elementSize,
+void init_hash_table(HashTable* ht, int tableSize, int elementSize,
                      int (*compare_elements)(void* e1, void* e2),
                      int (*hashing_function)(void* e),
                      void (*print_element)(void* e)) {
-    ht->size = size;
+    ht->tableSize = tableSize;
     ht->elementSize = elementSize;
     ht->compare_elements = compare_elements;
     ht->hashing_function = hashing_function;
-    ht->hashTable = malloc(size * elementSize);
+    ht->hashTable = malloc(tableSize * elementSize);
 }
 
 void destroy_hash_table(HashTable* ht) {
-    for (int i = 0; i < ht->size; i++) {
+    for (int i = 0; i < ht->tableSize; i++) {
         free(ht->hashTable[i]);
     }
     free(ht->hashTable);
@@ -39,10 +39,10 @@ void peek_at_element(HashTable* ht, void* element) {
 }
 
 void print_elements(HashTable* ht) {
-    for (int i = 0; i < ht->size; i++) {
+    for (int i = 0; i < ht->tableSize; i++) {
         void* element = ht->hashTable[i];
         if (element) {
-            printf("Index %d", i);
+            printf("Index %d\n", i);
             ht->print_element(ht->hashTable[i]);
         }
     }
