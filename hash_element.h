@@ -6,3 +6,4 @@ typedef struct _HashElement {
 } HashElement;
 
 void init_hash_element(HashElement *he, char airport[4]);
+void print_hash_element(void* e);
