@@ -9,5 +9,5 @@ void init_hash_element(HashElement *he, char airport[4]) {
 
 void print_hash_element(void* e) {
     HashElement *he = (HashElement*) e;
-    printf("%s is at heap index %d\n", he->airport, he->heapIndex);
+    printf("%s is at hash index %d\n", he->airport, he->heapIndex);
 }

@@ -14,4 +14,4 @@ void init_hash_table(HashTable* ht, int tableSize, int elementSize,
 void destroy_hash_table(HashTable* ht);
 void insert_into_hash_table(HashTable *ht, void* element);
 void peek_at_element(HashTable *ht, void* element);
-void print_elements(HashTable* ht);
+void print_hash_elements(HashTable* ht);

@@ -3,19 +3,22 @@
 
 #include "hash_element.h"
 #include "hash_table.h"
+#include "heap.h"
+#include "heap_element.h"
 
-#define HEAP_SIZE 100
+#define HASH_TABLE_SIZE 100
 
 int hashing_function(void* e) { return 1; }
 
-struct ABC {
-    int a;
-    int b;
-};
+int compare_heap_elements(void* e1, void*e2) {
+    HeapElement *h1 = e1;
+    HeapElement *h2 = e2;
+    return h1->dj - h2->dj;
+}
 
 int main() {
     // HashTable ht;
-    // init_hash_table(&ht, HEAP_SIZE, sizeof(HashElement), NULL,
+    // init_hash_table(&ht, HASH_TABLE_SIZE, sizeof(HashElement), NULL,
     // hashing_function, print_hash_element);
 
     // HashElement he;
@@ -23,20 +26,22 @@ int main() {
 
     // insert_into_hash_table(&ht, &he);
 
-    // print_elements(&ht);
+    // print_hash_elements(&ht);
 
     // destroy_hash_table(&ht);
 
-    struct ABC abc;
-    abc.a = 1;
-    abc.b = 2;
+    Heap h;
+    init_heap(&h, HASH_TABLE_SIZE, sizeof(HeapElement), compare_heap_elements, print_heap_element);
 
-    printf("a=%d, b=%d\n", abc.a, abc.b);
-    free(&abc);
-    printf("a=%d, b=%d\n", abc.a, abc.b);
+    HeapElement he;
+    init_heap_element(&he, "GHI");
+    insert_into_heap(&h, &he);
 
-    abc.a = 3;
-    abc.b = 4;
+    init_heap_element(&he, "JKL");
+    insert_into_heap(&h, &he);
 
-    printf("a=%d, b=%d\n", abc.a, abc.b);
+    init_heap_element(&he, "MNO");
+    insert_into_heap(&h, &he);
+
+    print_heap_elements(&h);
 }

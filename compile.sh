@@ -1,1 +1,1 @@
-gcc -o main main.c hash_table.c hash_element.c heap.c
+gcc -o main main.c hash_table.c hash_element.c heap.c heap_element.c

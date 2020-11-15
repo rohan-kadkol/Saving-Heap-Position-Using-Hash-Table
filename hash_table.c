@@ -18,6 +18,9 @@ void init_hash_table(HashTable* ht, int tableSize, int elementSize,
     ht->hashTable = malloc(tableSize * elementSize);
 }
 
+/* Note: It only destroys all the elements that were malloc'ed (memcpy). You
+ * need to call free(ht) to free the actual HashTable object
+ */
 void destroy_hash_table(HashTable* ht) {
     for (int i = 0; i < ht->tableSize; i++) {
         free(ht->hashTable[i]);
@@ -39,7 +42,7 @@ void peek_at_element(HashTable* ht, void* element) {
     memcpy(element, hashElement, ht->elementSize);
 }
 
-void print_elements(HashTable* ht) {
+void print_hash_elements(HashTable* ht) {
     printf("<-----START----->\n");
     for (int i = 0; i < ht->tableSize; i++) {
         void* element = ht->hashTable[i];
