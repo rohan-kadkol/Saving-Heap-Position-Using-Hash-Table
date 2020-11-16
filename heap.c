@@ -52,9 +52,16 @@ void insert_into_heap(Heap* h, void* element) {
     void* heapElement = malloc(h->elementSize);
     memcpy(heapElement, element, h->elementSize);
 
-    h->heap[h->currentSize] = element;
+    h->heap[h->currentSize] = heapElement;
     sift_up(h, h->currentSize);
     h->currentSize++;
+}
+
+/* Manually reduce the key of element, then pass it as a parameter.
+*/
+void decrease_key(Heap* h, void* element, int elementIndex) {
+    memcpy(h->heap[elementIndex], element, h->elementSize);
+    sift_up(h, elementIndex);
 }
 
 void print_heap_elements(Heap* h) {

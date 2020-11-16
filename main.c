@@ -35,12 +35,31 @@ int main() {
 
     HeapElement he;
     init_heap_element(&he, "GHI");
+    he.dj = 4;
     insert_into_heap(&h, &he);
 
     init_heap_element(&he, "JKL");
+    he.dj = 7;
     insert_into_heap(&h, &he);
 
     init_heap_element(&he, "MNO");
+    he.dj = 3;
+    insert_into_heap(&h, &he);
+
+    init_heap_element(&he, "PQR");
+    he.dj = 1;
+    insert_into_heap(&h, &he);
+
+    init_heap_element(&he, "STU");
+    he.dj = 10;
+    insert_into_heap(&h, &he);
+
+    init_heap_element(&he, "VQX");
+    he.dj = 8;
+    insert_into_heap(&h, &he);
+
+    init_heap_element(&he, "YYZ");
+    he.dj = 4;
     insert_into_heap(&h, &he);
 
     print_heap_elements(&h);
