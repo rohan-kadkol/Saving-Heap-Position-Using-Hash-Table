@@ -6,7 +6,7 @@ As many of you may not be familiar with C, you may find it difficult to understa
 
 **[Video recording of SI session that discusses the programming assignment # and the sample code in more detail](https://lsu.zoom.us/rec/share/dOujfHXyBQmCz_hNVoDRIWXzGKHibUcT5sjggIKlyIMaYaNOocWzsQroxVWdwtel.38OR-bmhZCiNKUkL)**
 
-# How to run the code (Mac/Linux)
+## How to run the code (Mac/Linux)
 
 ```
 chmod +x ./compile.sh
@@ -14,7 +14,29 @@ chmod +x ./compile.sh
 ./main
 ```
 
-# Sample Output
+## Sample Input
+
+Input is already implemented in main.c itself. It inputs the following (airports, dvalue) in the heap and has table:
+
+1. (GHI, 4)
+2. (JKL, 7)
+1. (MNO, 3)
+1. (PQR, 1)
+1. (STU, 10)
+1. (VQX, 8)
+1. (YYZ, 4)
+1. (NUY, 100)
+
+It then prints all the heap and hash elements.
+
+Then decrease_key is called for the following airports:
+
+1. (STU, 10) -> (STU, 2)
+2. (NUY, 100) -> (NUY, 1)
+
+Finally, it prints all the heap and hash elements again. 
+
+## Sample Output
 
 ```
 Printing heap elements...
