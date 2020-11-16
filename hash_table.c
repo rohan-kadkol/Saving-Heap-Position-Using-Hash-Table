@@ -42,6 +42,11 @@ void peek_at_element(HashTable* ht, void* element) {
     memcpy(element, hashElement, ht->elementSize);
 }
 
+void update_hash_table_element(HashTable *ht, void* element) {
+    int hashIndex = ht->hashing_function(element);
+    memcpy(ht->hashTable[hashIndex], element, ht->elementSize);
+}
+
 void print_hash_elements(HashTable* ht) {
     printf("<-----START----->\n");
     for (int i = 0; i < ht->tableSize; i++) {
