@@ -78,6 +78,19 @@ int main() {
     init_hash_element_1(&hashElement, heapElement.airport, h.currentSize);
     insert_into_heap(&h, &heapElement, &hashElement);
 
+    init_heap_element_1(&heapElement, "NUY", 100);
+    init_hash_element_1(&hashElement, heapElement.airport, h.currentSize);
+    insert_into_heap(&h, &heapElement, &hashElement);
+
+    print_heap_elements(&h);
+    print_hash_elements(&ht);
+
+    init_heap_element_1(&heapElement, "STU", 2);
+    decrease_key(&h, &heapElement);
+
+    init_heap_element_1(&heapElement, "NUY", 1);
+    decrease_key(&h, &heapElement);
+
     print_heap_elements(&h);
     print_hash_elements(&ht);
 }
