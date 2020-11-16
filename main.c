@@ -74,6 +74,8 @@ int main() {
     print_heap_elements(&h);
     print_hash_elements(&ht);
 
+    printf("\nDecreasing the dvalues of airports STU and NUY. Print the updated results.\n\n");
+
     init_heap_element_1(&heapElement, "STU", 2);
     decrease_key(&h, &heapElement);
 
