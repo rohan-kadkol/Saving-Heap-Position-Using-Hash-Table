@@ -90,11 +90,12 @@ void decrease_key(Heap* h, void* heapElement) {
 }
 
 void print_heap_elements(Heap* h) {
+    printf("Printing heap elements...\n");
     printf("<-----START----->\n");
     for (int i = 0; i < h->heapSize; i++) {
         void* element = h->heap[i];
         if (element) {
-            printf("Index %d\n", i);
+            printf("%d: ", i);
             h->print_element(element);
         }
     }

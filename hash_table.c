@@ -4,8 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// #include "hash_element.h"
-
 void init_hash_table(HashTable* ht, int tableSize, int elementSize,
                      int (*compare_elements)(void* e1, void* e2),
                      int (*hashing_function)(void* e),
@@ -48,11 +46,12 @@ void update_hash_table_element(HashTable *ht, void* element) {
 }
 
 void print_hash_elements(HashTable* ht) {
+    printf("Printing hash elements...\n");
     printf("<-----START----->\n");
     for (int i = 0; i < ht->tableSize; i++) {
         void* element = ht->hashTable[i];
         if (element) {
-            printf("Index %d\n", i);
+            printf("%d: ", i);
             ht->print_element(element);
         }
     }

@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #include "hash_element.h"
-// #include "hash_table.h"
 #include "heap.h"
 #include "heap_element.h"
 
@@ -33,16 +32,6 @@ int main() {
     HashTable ht;
     init_hash_table(&ht, HASH_TABLE_SIZE, sizeof(HashElement), NULL,
                     hashing_function, print_hash_element);
-
-    // HashElement he;
-    // init_hash_element(&he, "ABC");
-
-    // insert_into_hash_table(&ht, &he);
-
-    // print_hash_elements(&ht);
-
-    // destroy_hash_table(&ht);
-
     Heap h;
     init_heap(&h, HASH_TABLE_SIZE, sizeof(HeapElement), &ht,
               compare_heap_elements, print_heap_element);
